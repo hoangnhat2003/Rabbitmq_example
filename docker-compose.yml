@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  rabbitmq:
+    image: rabbitmq
+    restart: always
+    container_name: rabbitmq-example
+    hostname: rabbitmq
+    networks:
+      - basic-example
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+networks:
+  basic-example:
+    driver: bridge
