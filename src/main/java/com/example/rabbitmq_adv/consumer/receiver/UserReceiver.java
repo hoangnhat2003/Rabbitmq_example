@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-@RabbitListener(queues = RabbitMQConfig.QUEUE + "_USER")
+@RabbitListener(queues = RabbitMQConfig.QUEUE + "_USER", autoStartup = "false")
 public class UserReceiver {
     @Autowired
     private IUserEvent event;
